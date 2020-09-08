@@ -8,7 +8,7 @@
 
 	1. cp env-example .env
 
-	2. 修改宿主机代码路径及容器前缀
+	2. 修改 .env 配置
 
 	3. 启动：docker-compose up -d
 
