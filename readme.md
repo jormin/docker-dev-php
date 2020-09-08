@@ -10,6 +10,12 @@
 
 	2. 修改宿主机代码路径及容器前缀
 
+	3. 启动：docker-compose up -d
+
+	4. 关闭：docker-compose down
+
+	5. 启动/关闭/重启服务：docker-compose start|stop|restart nginx|php|mysql|redis
+
 
 # 软件
 

@@ -34,15 +34,16 @@ services:
     container_name: ${CONTAINER_NAME_PREFIX}-mysql
     ports:
       - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      # - ./mysql/conf:/etc/mysql
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=xxx0209
+    restart: always
     networks:
       - default
-    environment:
-      MYSQL_ROOT_PASSWORD: dev
-      MYSQL_DATABASE: dev
-    volumes:
-      - ./mysql/conf:/etc/mysql
-      - ./mysql/data:/var/lib/mysql
-    restart: always
   redis:
     image: redis:6.0.7
     container_name: ${CONTAINER_NAME_PREFIX}-redis

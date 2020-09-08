@@ -2,3 +2,5 @@
 CODE_PATH=
 # 容器名称前缀
 CONTAINER_NAME_PREFIX=dev
+# MySql 默认 root 密码
+MYSQL_ROOT_PASSWORD=
