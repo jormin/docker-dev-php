@@ -5,11 +5,11 @@
 
 # 软件
 
-	- nginx：安装最新版本
+	- nginx：1.19.2
 
 	- mysql：5.7.13
 
-	- redis：最新版本
+	- redis：6.0.7
 
 	- php：7.3-fpm-alpine
 

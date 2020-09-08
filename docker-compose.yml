@@ -44,7 +44,7 @@ services:
       - ./mysql/data:/var/lib/mysql
     restart: always
   redis:
-    image: redis:latest
+    image: redis:6.0.7
     container_name: ${CONTAINER_NAME_PREFIX}-redis
     ports:
       - "6379:6379"
