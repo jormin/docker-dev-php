@@ -40,7 +40,8 @@ services:
       MYSQL_ROOT_PASSWORD: dev
       MYSQL_DATABASE: dev
     volumes:
-      - "./mysql/data:/var/lib/mysql"
+      - ./mysql/conf:/etc/mysql
+      - ./mysql/data:/var/lib/mysql
     restart: always
   redis:
     image: redis:latest
@@ -48,7 +49,9 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - "./redis/data:/data"
+      - ./redis/conf:/etc/redis
+      - ./redis/data:/data
+    command: redis-server /etc/redis/redis.conf
     restart: always
     networks:
       - default
