@@ -3,6 +3,14 @@
 	基于 docker 的 web 开发环境
 
 
+# 使用
+
+
+	1. cp env-example .env
+
+	2. 修改宿主机代码路径及容器前缀
+
+
 # 软件
 
 	- nginx：1.19.2

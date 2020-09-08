@@ -2,4 +2,4 @@
 .env
 .DS_Store
 mysql/data
-reids/data
+redis/data
