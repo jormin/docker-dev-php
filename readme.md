@@ -1,6 +1,6 @@
 # About
 
-	基于的web开发环境
+	基于 docker 的 web 开发环境
 
 
 # 软件
