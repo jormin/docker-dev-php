@@ -18,7 +18,6 @@
 # php 扩展
 
 
-	```
 	/var/www/html # php -m
 	[PHP Modules]
 	bcmath
@@ -69,4 +68,4 @@
 
 	[Zend Modules]
 	Zend OPcache
-	```
+
