@@ -39,6 +39,9 @@ services:
       - ./mysql/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     restart: always
     networks:
       - default
@@ -51,6 +54,16 @@ services:
       - ./redis/conf:/etc/redis
       - ./redis/data:/data
     command: redis-server /etc/redis/redis.conf
+    restart: always
+    networks:
+      - default
+  pma:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: ${CONTAINER_NAME_PREFIX}-pma
+    ports:
+      - 9090:80
+    environment:
+      - PMA_ARBITRARY=1
     restart: always
     networks:
       - default
