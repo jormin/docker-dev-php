@@ -5,6 +5,7 @@ CODE_PATH=
 CONTAINER_NAME_PREFIX=dev
 
 # MySql 默认 root 密码
+MYSQL_ROOT_PASSWORD=
 # 创建数据库
 MYSQL_DATABASE=
 # 创建账号
