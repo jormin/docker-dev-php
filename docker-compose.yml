@@ -14,7 +14,7 @@ services:
       - TZ=Asia/Shanghai
     restart: always
     networks:
-      - ${NETWORK_NAME}
+      - default
   php:
     image: ccr.ccs.tencentyun.com/jormin/php-swoole:0.0.1
     container_name: ${CONTAINER_NAME_PREFIX}-php
@@ -28,7 +28,7 @@ services:
       - TZ=Asia/Shanghai
     restart: always
     networks:
-      - ${NETWORK_NAME}
+      - default
   mysql:
     image: library/mysql:5.7.13
     container_name: ${CONTAINER_NAME_PREFIX}-mysql
@@ -44,7 +44,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     restart: always
     networks:
-      - ${NETWORK_NAME}
+      - default
   redis:
     image: redis:6.0.7
     container_name: ${CONTAINER_NAME_PREFIX}-redis
@@ -56,7 +56,7 @@ services:
     command: redis-server /etc/redis/redis.conf
     restart: always
     networks:
-      - ${NETWORK_NAME}
+      - default
   pma:
     image: phpmyadmin/phpmyadmin:latest
     container_name: ${CONTAINER_NAME_PREFIX}-pma
@@ -66,7 +66,7 @@ services:
       - PMA_ARBITRARY=1
     restart: always
     networks:
-      - ${NETWORK_NAME}
+      - default
 
 networks:
   default:
