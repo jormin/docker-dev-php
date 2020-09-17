@@ -4,7 +4,9 @@ CODE_PATH=
 # 容器名称前缀
 CONTAINER_NAME_PREFIX=dev
 
-# MySql 默认 root 密码
+# MySQL宿主机端口
+MYSQL_PORT=3306
+# MySQL默认root密码
 MYSQL_ROOT_PASSWORD=
 # 创建数据库
 MYSQL_DATABASE=
@@ -13,5 +15,5 @@ MYSQL_USER=
 # 创建密码
 MYSQL_PASSWORD=
 
-# 网络名称
-NETWORK_NAME=
+# Redis宿主机端口
+REDIS_PORT=6379
