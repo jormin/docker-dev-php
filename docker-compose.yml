@@ -16,7 +16,7 @@ services:
     networks:
       - default
   php:
-    image: ccr.ccs.tencentyun.com/jormin/php-swoole:0.0.1
+    build: ./php/
     container_name: ${CONTAINER_NAME_PREFIX}-php
     expose:
       - 9000
