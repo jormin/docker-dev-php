@@ -10,6 +10,7 @@ services:
       - ./nginx/logs:/var/log/nginx:rw
       - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf/conf.d:/etc/nginx/conf.d/:ro
+      - ./nginx/conf/certs:/etc/nginx/certs/:ro
     environment:
       - TZ=Asia/Shanghai
     restart: always
