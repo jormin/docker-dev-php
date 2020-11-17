@@ -5,6 +5,7 @@ services:
     container_name: ${CONTAINER_NAME_PREFIX}-nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ${CODE_PATH}:/var/www:rw
       - ./nginx/logs:/var/log/nginx:rw
