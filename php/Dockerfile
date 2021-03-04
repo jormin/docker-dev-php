@@ -46,4 +46,7 @@ RUN apk add --no-cache --virtual .build-deps autoconf automake make g++ gcc \
     # 删除系统扩展
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* /tmp/* /usr/share/man \
-    && php -m
+    && php -m \
+
+    # 删除/vaw/www/html目录
+    && rm -rf /var/www/html
