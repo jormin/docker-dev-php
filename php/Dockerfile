@@ -11,7 +11,7 @@ RUN echo "Asia/Shanghai" > /etc/timezone
 RUN set -ex \
     && apk update \
     && apk add --no-cache libstdc++ wget openssl bash \
-    libmcrypt-dev libzip-dev libpng-dev libc-dev zlib-dev librdkafka-dev
+    libmcrypt-dev libzip-dev libpng-dev libc-dev zlib-dev librdkafka-dev libmemcached-dev cyrus-sasl-dev
 
 RUN apk add --no-cache --virtual .build-deps autoconf automake make g++ gcc \
     libtool dpkg-dev dpkg pkgconf file re2c pcre-dev php7-dev php7-pear openssl-dev \
@@ -19,9 +19,9 @@ RUN apk add --no-cache --virtual .build-deps autoconf automake make g++ gcc \
     # 安装php常用扩展
     && docker-php-ext-install gd bcmath opcache mysqli pdo pdo_mysql sockets zip \
 
-    # Extension redis bcmath mongodb rdkafka
-    && pecl install redis mcrypt mongodb rdkafka \
-    && docker-php-ext-enable redis mcrypt mongodb rdkafka \
+    # Extension memcached redis bcmath mongodb rdkafka
+    && pecl install memcached redis mcrypt mongodb rdkafka \
+    && docker-php-ext-enable memcached redis mcrypt mongodb rdkafka \
 
     # 安装 Composer
     && wget https://mirrors.cloud.tencent.com/composer/composer.phar \
