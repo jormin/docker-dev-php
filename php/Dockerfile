@@ -43,6 +43,20 @@ RUN apk add --no-cache --virtual .build-deps autoconf automake make g++ gcc \
     && rm -r swoole \
     && docker-php-ext-enable swoole \
 
+    # 安装xlswriter
+    && curl -fsSL "https://pecl.php.net/get/xlswriter-1.3.4.1.tgz" -o xlswriter.tgz \
+    && mkdir -p xlswriter \
+    && tar -xf xlswriter.tgz -C xlswriter --strip-components=1 \
+    && rm xlswriter.tgz \
+    && ( \
+        cd xlswriter \
+        && phpize \
+        && ./configure --enable-reader \
+        && make && make install \
+    ) \
+    && rm -rf xlswriter \
+    && docker-php-ext-enable xlswriter \
+
     # 删除系统扩展
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* /tmp/* /usr/share/man \

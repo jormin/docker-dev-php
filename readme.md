@@ -73,6 +73,7 @@
 	standard
 	swoole
 	tokenizer
+	xlswriter
 	xml
 	xmlreader
 	xmlwriter
