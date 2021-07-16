@@ -59,29 +59,6 @@ services:
     restart: always
     networks:
       - devops
-  etcd:
-    image: quay.io/coreos/etcd:latest
-    container_name: etcd
-    ports:
-      - "${ETCD_PORT}:2379"
-    volumes:
-      - ./etcd/data:/etcd-data
-    entrypoint: /usr/local/bin/etcd
-    command:
-      - '--name=etcd1'
-      - '--data-dir=/etcd_data'
-      - '--initial-advertise-peer-urls=http://etcd1:2380'
-      - '--listen-peer-urls=http://0.0.0.0:2380'
-      - '--listen-client-urls=http://0.0.0.0:2379'
-      - '--advertise-client-urls=http://etcd1:2379'
-      - '--initial-cluster-token=mys1cr2tt1k7n'
-      - '--heartbeat-interval=250'
-      - '--election-timeout=1250'
-      - '--initial-cluster=etcd1=http://etcd1:2380,etcd2=http://etcd2:2380,etcd3=http://etcd3:2380'
-      - '--initial-cluster-state=new'
-    restart: always
-    networks:
-      - devops
 
 networks:
   devops:
